@@ -1,6 +1,7 @@
 // from data.js
 var tableData = data;
 // Use D3 to select the table body
+
 var tbody = d3.select("tbody");
 
 // Use D3 to select the table
@@ -30,7 +31,26 @@ button.on("click", function() {
   console.log(inputValue);
   //console.log(tableData);
 
-  var filteredData = tableData.filter(state => tableData.state === inputValue);
+  var filteredData = tableData.filter(ufo_date => ufo_date.datetime === inputValue);
 
   console.log(filteredData)
+//});
+
+  var filtered_table = filteredData;
+  // Use D3 to select the table body
+
+  var tbody = d3.select("tbody");
+
+  // Use D3 to select the table
+  var table = d3.select("table");
+  // YOUR CODE HERE!
+
+  data.forEach((UFO_Filter_Report) => {
+    var row = tbody.append("tr");
+    Object.entries(UFO_Filter_Report).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  console.log(UFO_Filter_Report)
+  });
 });
