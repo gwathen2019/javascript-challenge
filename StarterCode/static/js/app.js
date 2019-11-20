@@ -11,7 +11,7 @@ data.forEach((UFO_Report) => {
     var cell = row.append("td");
     cell.text(value);
   });
-//console.log(UFO_Report)
+console.log(UFO_Report)
 });
 
 // Select the button
